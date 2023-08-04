@@ -9,3 +9,23 @@ changeColor = (elementHtml, color) =>{
     elementHtml.style.color = color
 
 }
+
+pideColor = (elementHtml) =>{
+    let color = prompt("Que color quieres");
+    elementHtml.style.color = color
+    elementHtml.innerHTML="<h3> ahora soy "+ color + "</h3>";
+
+
+}
+
+function regresarColor () {
+    const refRedColor = document.getElementById('red-color');
+    const refGreenColor = document.getElementById('green-color');
+    const refPurpleColor = document.getElementById('purple-color');
+    const refUserColor = document.getElementById('user-color');
+
+    changeColor(refRedColor, 'black');
+    changeColor(refGreenColor, 'black');
+    changeColor(refPurpleColor, 'black');
+    changeColor(refUserColor, 'black');
+}

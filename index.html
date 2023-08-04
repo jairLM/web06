@@ -23,17 +23,25 @@
 
     <footer class="container text-center" style="height: 20vh;">
         <div class="row  align-items-center justify-content-center">
-            <div class="col-4">
-                <h3 onclick="changeColor(this, 'green')">Cambia de color a verde</h3>
+            <div class="col-6 col-md-4">
+                <h3 id="green-color" onclick="changeColor(this, 'green')">Cambia de color a verde</h3>
             </div>
-            <div class="col-4">
-                <h3 onclick="changeColor(this, 'red')">Cambia de color a rojo</h3>
+            <div class="col-6 col-md-4">
+                <h3 id="red-color" onclick="changeColor(this, 'red')">Cambia de color a rojo</h3>
             </div>
-            <div class="col-4">
-                <h3 onclick="changeColor(this, 'purple')">Cambia de color a morado</h3>
+            <div class="col-6 col-md-4">
+                <h3 id="purple-color" onclick="changeColor(this, 'purple')">Cambia de color a morado</h3>
+            </div>
+            <div class="col-6 col-md-4">
+                <h3 id="user-color" onclick="pideColor(this)">Cambia de color a morado</h3>
+            </div>
+            <div class="col-6 col-md-4">
+                <button type="button" class="btn btn-primary" onclick="regresarColor()">Regresar color</button>
             </div>
             
         </div>
+
+        <!-- Hacer un div que te pregunte el color y cambie el texto a ese color -->
     </footer>
 
 

@@ -11,13 +11,19 @@
 
     <main class="container text-center bg-black text-light">
         <div class="row align-items-center justify-content-center" style="height: 100vh;">
-            <div class="col-10 col-md-6 col-lg-10">
+            <div class="col-10 col-md-6 col-lg-6">
                 <img onclick="clickPatricio()" class="img-fluid rounded" src="https://televisa.brightspotcdn.com/dims4/default/343782b/2147483647/strip/true/crop/572x322+0+35/resize/1200x675!/quality/90/?url=https%3A%2F%2Ftelevisa-brightspot.s3.amazonaws.com%2Fapi%2F1a%2F2e%2Fe64ab1d746eb9ea3eef19d44937d%2Fpatricio-estrella-tendra-su-propia-caricatura.PNG" alt="patricio contruyendo">
             </div>
-            <div class="col-10 col-md-6 col-lg-2">
+            <div class="col-10 col-md-6 col-lg-6">
                 <h2>Página de construccion</h2>
                 <p>Estamos trabajando en la página, pronto estara lista</p>
-            </div>  
+                <div class=" col-12">
+                    <h2 id="saludo">Hola, aquí puede ir tu nombre</h2>
+                    <button onclick="escribeNombre()" type="button" class="btn btn-lg btn-warning">Intentalo</button>
+                </div> 
+            </div> 
+            
+
         </div>
     </main>
 
@@ -33,7 +39,7 @@
                 <h3 id="purple-color" onclick="changeColor(this, 'purple')">Cambia de color a morado</h3>
             </div>
             <div class="col-6 col-md-4">
-                <h3 id="user-color" onclick="pideColor(this)">Cambia de color a morado</h3>
+                <h3 id="user-color" onclick="pideColor(this)">Cambia al color que quieras</h3>
             </div>
             <div class="col-6 col-md-4">
                 <button type="button" class="btn btn-primary" onclick="regresarColor()">Regresar color</button>

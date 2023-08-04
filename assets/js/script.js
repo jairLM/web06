@@ -29,3 +29,10 @@ function regresarColor () {
     changeColor(refPurpleColor, 'black');
     changeColor(refUserColor, 'black');
 }
+
+function escribeNombre(){
+    const saludo = document.getElementById('saludo');
+    const nombre = prompt("¿Cual es tu nombre?");    
+    saludo.innerHTML= `<h3> Hola, ${nombre}</h3>` 
+    
+}

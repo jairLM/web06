@@ -55,3 +55,17 @@ if(localidad == 'Buenos Aires'){
 
 console.log(saludo('Jair'));
 console.log(saludo('David'));
+
+/* 
+
+-----funciones autoinvocacas(selft-invoking functions)-----
+Funciones que se autoinvocan, se pueden definir con funciones anónmimas.
+
+sintaxis:
+    
+(function (parámetros){})(argumentos);
+*/
+
+(function (name){
+    console.log(`Me llamo ${name} y me autoinvoco`);
+})('ChatGpt')

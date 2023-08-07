@@ -72,3 +72,27 @@ const myObject = {
     [myKey]:567
 }
 console.log(myObject);
+
+//----------------------------------------------Objetos en JS
+//Tipos de dato array
+const cancionesCh30 = ['Highway Star', 'Trouble', 'Saoko', 'Rock Dj'];
+
+//Tipos de datos Object
+const misDatosDePerfil = {
+    name: 'Jair',
+    lastname: 'Lopez',
+    age: 24,
+    isBelicoso: false,
+    fullName: function(){
+        return `Nombre completo de ${this.name} es: ${this.name} ${this.lastname}` ;
+        
+        
+    }//Agregar una funcion que muestre el nombre completo en mayusculas 
+}
+console.log(misDatosDePerfil);
+console.table(misDatosDePerfil);
+console.table(misDatosDePerfil.fullName);
+console.log(misDatosDePerfil.fullName()); //metodos llevan parentesis
+console.log(misDatosDePerfil.fullName().toUpperCase()); //NOMBRE COMPLETO DE JAIR ES: JAIR LOPEZ
+
+

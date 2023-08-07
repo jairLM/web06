@@ -69,3 +69,71 @@ sintaxis:
 (function (name){
     console.log(`Me llamo ${name} y me autoinvoco`);
 })('ChatGpt')
+
+
+/* 
+
+-----funciones flecha(arrow functions)-----
+Funciones similares a las funciones expresadas pero:
+-No requiere la palabra reservada function
+-Si tiene una sala instrucion no requiere las llaves -> {}
+-Si la instruccion es el mismo retorno , no requiere la palabra return 
+-No tienen hoisting por eso son similares a las expresadas
+
+sintaxis:
+    const nombreVariable = (parámetros)=>instruccion;
+    o
+    const nombreVariable = (parámetros)=>{
+        instrucciones
+        return expresión;
+    }
+    
+
+*/
+const areaRectangulo = (base, altura)=>`El area es: ${base*altura} m2`
+
+console.log(areaRectangulo(5, 8));
+
+/* 
+
+-----Parámetros por defecto(default parameters)-----
+Inicializa un parámetro de la función, si no se envía el argumento cuando se invoca
+*/
+/**
+ * 
+ * @param {number} base 
+ * @param {number} altura 
+ * @returns 
+ */
+
+const areaTriangulo = (base=1, altura=1)=>`El area del triángulo es ${(base*altura)/2} cm2`
+
+console.log(areaTriangulo(5,8));
+console.log(areaTriangulo());//NaN
+console.log((1000).toString());//conversión base 10 -> 1000
+console.log((1000).toString(2));//conversión base 2 -> 1111101000
+console.log((1000).toString(16));//conversión base 16 -> 3e8
+
+/*
+
+---------Parámetros rest(rest parameters)-----------
+Permite representar una serie de valores indefinidos en los argumentos.
+Esta serie de valores se presentar como un array.
+Rest parameters debe ir al final de la lista de parámetros
+
+sintaxis:
+    ...nombreParametros
+
+*/
+
+const sumatoriaMultiplesNumeros = (a=0, b=0, ...rest) =>{
+    let suma = a + b;
+    for (let i = 0; i < rest.length; i++){
+        suma = suma + rest[i];
+      }
+      return suma;
+   
+ } 
+
+console.log(`Sumatoria de múltiples números: ${sumatoriaMultiplesNumeros(2,5,10,9,50)}`); //76
+console.log(`Sumatoria de múltiples números: ${sumatoriaMultiplesNumeros(2)}`); //NaN,2

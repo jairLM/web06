@@ -134,8 +134,23 @@ console.log(parseInt('100.123'));//100
 console.log(Number('123-165'));//NaN 
 console.log(parseInt('123-165')); //123
 console.log(parseInt('#123-165')); //NaN
+console.log(parseInt('#123-165'.slice(1))); //123
 console.log(Number(true));//1
 console.log(parseInt(true));//NaN
+
+//Conversión a boolean
+//En la conversión boolean los siguientes valores son false
+// "", 0, null, undefined
+console.log('Boolean(1):'+ Boolean(1));//true
+console.log('Boolean(1000):'+ Boolean(1000));//true
+console.log('Boolean("Hola"):'+ Boolean('Hola'));//true
+console.log('Boolean("false"):'+ Boolean('False'));//true
+console.log('Boolean(" "):'+ Boolean(' '));//true
+
+//Number
+// [] -> 0, [30] -> 30, [30,33] -> NaN, false -> 0, true -> 1
+//string
+//[] -> "", [12,2] -> "12, 2", function(){} -> "function(){}", {} -> [object, object]
 
 
 

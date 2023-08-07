@@ -124,6 +124,19 @@ console.log(10 + parseInt(myAgeTxt)); //35
 console.log(10 + parseFloat(myAgeTxt)); //35
 console.log(10 + (+myAgeTxt)); //35 conversion con operador unario
 
+//Diferencia entre usar Number() y parseInt()
+//- Number convierte enteros y decimales
+//- parseInte convierte solo enteros
+console.log(parseInt('100.123'));//100
+//- Number devuelve NaN si la cadena contiene algún caracter no numérico
+//-paseInt convierte los enteros hasta encontrar un caracter no numérico
+// Si la entrda no comienza con un valor numérico, devuelve NaN
+console.log(Number('123-165'));//NaN 
+console.log(parseInt('123-165')); //123
+console.log(parseInt('#123-165')); //NaN
+console.log(Number(true));//1
+console.log(parseInt(true));//NaN
+
 
 
 

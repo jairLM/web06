@@ -137,3 +137,9 @@ const sumatoriaMultiplesNumeros = (a=0, b=0, ...rest) =>{
 
 console.log(`Sumatoria de múltiples números: ${sumatoriaMultiplesNumeros(2,5,10,9,50)}`); //76
 console.log(`Sumatoria de múltiples números: ${sumatoriaMultiplesNumeros(2)}`); //NaN,2
+
+/*
+
+-----------Funciones de callback------------
+
+*/ 

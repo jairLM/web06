@@ -87,12 +87,43 @@ const misDatosDePerfil = {
         return `Nombre completo de ${this.name} es: ${this.name} ${this.lastname}` ;
         
         
-    }//Agregar una funcion que muestre el nombre completo en mayusculas 
+    },//Agregar una funcion que muestre el nombre completo en mayusculas 
+    fullNameUpperCase: function(){
+        return `Nombre completo de ${this.name} es: ${this.name.toUpperCase()} ${this.lastname.toUpperCase()}` ;
+
+    }
 }
 console.log(misDatosDePerfil);
 console.table(misDatosDePerfil);
 console.table(misDatosDePerfil.fullName);
 console.log(misDatosDePerfil.fullName()); //metodos llevan parentesis
 console.log(misDatosDePerfil.fullName().toUpperCase()); //NOMBRE COMPLETO DE JAIR ES: JAIR LOPEZ
+console.log(misDatosDePerfil.fullNameUpperCase());//Nombre completo de Jair es: JAIR LOPEZ
+
+//-----------Conversión explicita de datos
+const horaDescanso = 13;
+console.log(`Hora de descanso: ${horaDescanso} hrs`);
+
+const horaDescansoTxt = String(horaDescanso);
+console.log(`Hora de descanso: ${horaDescansoTxt} hrs`);
+console.log(`Hora de retorno: ${horaDescansoTxt+'.15'} hrs`)
+
+const colorVerde = 0x008000;// representacion decimal: 32768
+console.log(`El valor RGB del color verde es: ${colorVerde}`);
+console.log(`El valor RGB del color verde es: ${colorVerde.toString()}`);
+console.log(`El valor RGB del color verde es: ${colorVerde.toString(16)}`);
+console.log(`El valor RGB del color verde es: #${colorVerde.toString(16).padStart(6,'0')}`);//El valor RGB del color verde es: #008000
+
+//Convertir a Number
+const myAgeTxt = '25';
+const sumatoria = 10 + myAgeTxt;
+
+console.log(sumatoria); //1025
+console.log(10 + Number(myAgeTxt)); //35
+console.log(10 + parseInt(myAgeTxt)); //35
+console.log(10 + parseFloat(myAgeTxt)); //35
+console.log(10 + (+myAgeTxt)); //35 conversion con operador unario
+
+
 
 

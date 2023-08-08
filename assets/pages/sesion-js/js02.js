@@ -193,7 +193,7 @@ function cursosEnComun(student1Courses, student2Courses){
        for (let j = 0; j < student2Courses.length; j++) { //iteracion sobre student2Courses
         console.log(` ${student1Courses[i]} === ${student2Courses[j]} : ${student1Courses[i] === student2Courses[j]}`);
 
-        
+
         if(student1Courses[i]===student2Courses[j]){
             commonCourses.push(student1Courses[i]);
         }
@@ -206,3 +206,25 @@ function cursosEnComun(student1Courses, student2Courses){
 }
 
 console.log(cursosEnComun(student1Courses, student2Courses));
+
+//-------------Resolviendo con filter e include-------------
+
+function getCommonCoursesFilter(array1Course, array2Course){
+    return array1Course.filter(course => array2Course.includes(course));
+}
+console.log(`Curson en comun con filter ${getCommonCoursesFilter(student1Courses, student2Courses)}`);
+
+//-------------Resolviendo con filter e include por partes------------
+console.log('####################################');
+function includeCourse(course, index, array){
+    console.log(`Elemtento ${course}, indice ${index}, array ${array}`);
+    return student2Courses.includes(course);//evaluacion
+}
+
+function getCommonCoursesFilter(array1Course, array2Course){
+    const commonCourses = array1Course.filter(includeCourse);
+    return commonCourses;
+
+}
+
+console.log(`Comunxpartes :${getCommonCoursesFilter(student1Courses, student2Courses)}`);

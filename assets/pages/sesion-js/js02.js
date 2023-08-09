@@ -256,11 +256,57 @@ console.log(`Cantidad de letras p es: ${contandoCaracteres(frasePP, 'p')} `);
 
         }else{
             llamada recuriva
-            NombreFuncion(nuevoParametro)
+            nombreFuncionRecuriva(nuevoParametro)
         }
     }
 
 */
+
+//----------Cálculo del faactorial  de un numero usando ciclo for----------
+
+function factorialFor(num){
+    let total = 1;
+    for (let i = 1; i <= num; i++) {
+
+        total *= i;
+               
+    }
+    return total;
+
+
+}
+
+console.log(factorialFor(5));
+
+
+//----------Cálculo del faactorial  de un numero usando recursividad----------
+
+function factorialRecursivo (numero){
+
+    if (numero <= 1) {
+        return 1;
+    } else {
+        console.log(`${numero}*${numero-1}`);
+        return numero * factorialRecursivo(numero-1);
+    }
+
+}
+console.log(`El factorial recursivo de 5 es ${factorialRecursivo(5)}`);
+
+//recursividad saludo del 1 al 10
+
+//al reves
+function saludoz( numeroSaludo){
+    if( numeroSaludo === 1){
+        return `Saludo ${numeroSaludo}`;
+    }
+    else {
+        // llamada recursiva
+        console.log(`Saludo ${numeroSaludo}`)
+        return saludoz( numeroSaludo - 1 );
+    }
+}
+console.log(saludoz(10));
 
 
 

@@ -107,3 +107,60 @@ const setVelocidadVentilador =(velocidad = 0) =>{
 }
 
 console.log(`El ventilador está en ${setVelocidadVentilador('1')} `);//no existe
+
+
+//----Ejercicio estaciones del año---
+/**
+ *Preguntar por el numero de mes respondiendo del 1 al 12
+ desplegar de acuerdo al mes un alert (mostrarlo en el DOM) la estacion del año
+ mes 12 , 1, 2 = invierno
+ mes 3, 4, 5 = primaver
+ mes 6, 7, 8 = verano
+ mes 9, 10, 11 = otoño
+
+ realizar una versión con if-else-elseif y otra con switch
+ */
+
+estacionDelAñoIfElse = (numMes = parseInt(prompt('Inserta el numero de mes'))) => {
+    let estacion;
+    let frase = 'La estacion es ';
+    if(numMes === 1 || numMes === 2 || numMes === 12) estacion = frase + 'Invierno';
+    else if(numMes >= 3 && numMes <= 5) estacion = frase + 'Primavera';
+    else if(numMes >= 6 && numMes <= 8) estacion = frase + 'Verano';
+    else if(numMes >= 9 && numMes <= 11) estacion = frase + 'Otoño';    
+    else estacion = 'Solo hay 12 meses, te saliste de ese rango';
+    return estacion;
+}
+
+//alert(estacionDelAñoIfElse());
+
+estacionDelAñoSwitch = (numMes = parseInt(prompt('Inserta el numero de mes'))) =>{
+
+    let estacion;
+
+    switch (numMes) {
+        case 1:
+        case 2:
+        case 12: estacion = 'Invierno'; break;
+        
+        case 3:
+        case 4:
+        case 5: estacion = 'Primavera'; break;
+
+        case 6:
+        case 7:
+        case 8: estacion = 'Verano'; break;
+
+        case 9:
+        case 10:
+        case 11: estacion = 'Invierno'; break;            
+    
+        default: estacion = 'Solo hay 12 meses, te saliste de ese rango'; break;
+            
+    }
+    return estacion;
+
+}
+
+//alert(estacionDelAñoSwitch());
+

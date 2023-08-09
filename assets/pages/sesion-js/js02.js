@@ -1,3 +1,4 @@
+console.clear()
 console.log('Sesión JS-01');
 
 /*
@@ -307,6 +308,7 @@ function saludoz( numeroSaludo){
     }
 }
 console.log(saludoz(10));
+
 
 
 

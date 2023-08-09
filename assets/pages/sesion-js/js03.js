@@ -164,3 +164,56 @@ estacionDelAñoSwitch = (numMes = parseInt(prompt('Inserta el numero de mes'))) 
 
 //alert(estacionDelAñoSwitch());
 
+//----------Operador ternario------
+/*
+Es el unico operador de JS que tiene 3 operandos
+Generalmente se utiliza como opción a la sentencia if-else
+
+sintaxis
+    condicio ? expresionSiCondicionEsVerdadera : expresionSiCondicionEsFalsa
+
+*/ 
+
+const pagoTarjetaCredito = true;
+/*
+let msj;
+if(pagoTarjetaCredito) msj = 'ha realizado el pago de su TC';
+else msj = 'no se ha realizado el pago de TC'
+*/
+const msj = pagoTarjetaCredito  ? 'ha realizado el pago de su TC' : 'no se ha realizado el pago de TC';
+
+document.write(`El usuario ${msj}`);
+
+//----min ejercicio---
+/**
+ * Preguntar con prompt la edad del usuario: 20
+ * si es >= 18 en la consola 'El usuario es mayor de edad'
+ * si no cumple, en la consola debe imprimir'El usuario es menor de edad'
+ */
+
+mayorOnoEdad = (edad = parseInt(prompt('Ingresa tu edad'))) =>{    
+    const mayorEdad = edad >= 18 ? 'Si pasas al antro': 'No pasas al antro'
+    return mayorEdad;
+}
+
+//console.log(mayorOnoEdad());
+
+//......... Cálculo del factorial de un número usando recursividad ...............
+
+/*function factorialConRecursividad( numero ){
+    if ( numero <= 0 ) {
+        return 1;
+    } else {
+        console.log(`${numero} * ${numero-1}`);
+        return numero * factorialConRecursividad( numero -1 );
+    }
+}
+
+console.log(`El factorial recursivo de 5 es: 
+${factorialConRecursividad(5)}`);*/
+
+function factorialConRecursividad( numero = 1 ){
+    return numero <= 0 ? 1 : numero * factorialConRecursividad(numero-1);
+    
+}
+console.log(`El factorial recursivo de 5 es: ${factorialConRecursividad(3)}`);

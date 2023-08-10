@@ -28,3 +28,25 @@ for (let equipo = 0; equipo < personasEnCh30.length; equipo++) {
     }
     
 }
+
+//------uso de for ...of------
+/*
+  Ejecuta una sentencia por cada elementos de un objeto iterable(array, colección, string)
+ */
+
+  console.table(personasEnCh30);
+
+  const myPet = 'Kraken';
+
+  for (const letra of myPet){
+    console.log(letra);
+  } 
+
+  for (const equipo of personasEnCh30){
+    console.log(equipo);
+    for (const persona of equipo) {
+        console.log(persona);
+    }
+  }
+
+  //---------forEach--------

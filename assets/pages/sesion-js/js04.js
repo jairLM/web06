@@ -126,3 +126,44 @@ for (let i = 1; i <=5; i++) {
     }
     
 }
+
+//--------ciclo While -------------------
+/**
+ * Crea un bucle que ejecuta una sentencia mientras la condición especificada se cumpla.
+ * Sintaxis
+ * while(condicion)sentencia;
+ * 
+ * while(condicion){
+ *      Sentencia
+ * }
+ */
+
+/*let counter = 1;
+while(confirm('¿Quieres continuar?')){
+    console.log(`Has continuado ${counter} veces`);
+    counter ++
+}*/
+
+//--------ciclo Do - While -------------------
+/**
+ * Crea un bucle que ejecuta una sentencia mientras la condición especificada se cumpla. La evaluación se realiza despues de ejecutar la sentencia.
+ * Sintaxis
+ * 
+ * 
+ * do(condicion){
+ *      Sentencia
+ * }while (condicion);
+ */ 
+
+let valor = -1;
+while (valor < 5) {
+    console.log(`Valor en while ${valor}`);
+    valor ++
+}
+
+
+valor = 4;
+// do {
+//     console.log(`Valor en do-while ${valor}`);
+//     valor++;
+// } while ();

@@ -119,3 +119,21 @@ console.log('activado' || '');//'activado'
 console.log('activado' || papasFritas);//'activado'
 
 
+const person = {
+    name: 'Leo',
+    lastName:'Ronaldo',
+    age:25
+
+};
+
+console.log(`Nombre: ${person.name}`);
+console.log(`Nombre: ${person["name"]}`);
+
+//const occupation = person.occupation;//undefined
+
+//const occupation = person.occupation === undefined ? 'Software Engineer' : person.occupation
+//console.log(`Ocupación: ${occupation}`);
+
+const occupation = person.occupation || 'Software Engineer';//corto circuito
+//const occupation = person.occupation ?? 'Software Engineer';//operador nullish coalescing
+console.log(`Ocupación: ${occupation}`);

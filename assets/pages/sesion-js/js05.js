@@ -137,3 +137,87 @@ console.log(`Nombre: ${person["name"]}`);
 const occupation = person.occupation || 'Software Engineer';//corto circuito
 //const occupation = person.occupation ?? 'Software Engineer';//operador nullish coalescing
 console.log(`Ocupación: ${occupation}`);
+
+//--------comparación estricta-----
+/**
+ * === Estrictamente igual, se debe de comparar el valor y el tipo de dato
+ !== Estrictamente diferente, debe ser diferente el valor y el tipo  de dato
+ */
+
+ console.log('23' === 23);//false
+ console.log('true' === true);//false
+ console.log('true' == true);//false
+ console.log('45' !== 45);//true
+ console.log(NaN === NaN);//false
+
+ //------operador de desestructuración(Destructuring)-----
+ /**
+  * Es un expresión en JS que hace posible extraes datos de arreglos u objetos y nos ayuda a realizar asignaciones mas complejas.
+  */
+
+ let dataA = 10;
+ let dataB = 20;
+
+ console.log(`A: ${dataA}, B: ${dataB}`);
+
+ [dataA, dataB] = [dataB, dataA]
+
+ console.log(`A: ${dataA}, B: ${dataB}`);
+
+const car = {
+    model:'Vento',
+    brand:'VW',
+    year:2023,
+    color:'red',
+    price:320_000,
+    additionalInfo:{
+        bluetooth : true,
+        cruiseControl : true,
+        gps : false
+    }
+
+};
+//console.log(`Modelo: ${car.model}`);
+//console.log(`Año: ${car.year}`);
+//console.log(`Año: ${car.year}`);
+
+//const carModel = car.model;
+//const carYear = car.year;
+const {model : ventoModel, year, additionalInfo:{bluetooth}} = car
+
+console.log(`Modelo: ${ventoModel}`);
+console.log(`Año: ${year}`);
+//console.log(`Tiene bluetooth: ${car.additionalInfo.bluetooth ? 'si' : 'no'}`);
+//console.log(`Tiene bluetooth: ${additionalInfo.bluetooth ? 'si' : 'no'}`);
+console.log(`Tiene bluetooth: ${bluetooth ? 'si' : 'no'}`);
+
+//---Ejercicio---
+/**
+ * Hacer una función que realice la división de 2 números y entregue (return) en entero el cociente y el residuo
+ */
+
+/*division = () =>{
+    dividendo = 10;
+    divisor = 4;
+    return total = {
+        cociente: parseInt(dividendo/divisor),
+        residuo : dividendo%divisor
+    }
+
+}
+console.log(division());*/
+
+division = () =>{
+    let dividendo = 10;
+    let divisor = 4;
+    let cociente =  parseInt(dividendo/divisor);
+    let residuo = dividendo%divisor;
+    return {cociente, residuo};
+
+}
+
+const {cociente, residuo} = division();
+
+
+console.log(`división: ${cociente}, residuo: ${residuo}`);
+

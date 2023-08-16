@@ -74,6 +74,37 @@ console.log('Despues de consumir la promesa');
         .then( (response)=> console.log(response.code, response.message)  )
         .catch( (error)=> console.log(error.code, error.message)  );
 
+//--------consumir las promesas con async y await--------
+/**
+ * Aync y await facilita la escritura y lectura de código asíncrono
+ * permite escribir código asíncrono de manera similar a como se escribiria código síncrono
+ */
+
+async function grettingCh30(name){
+
+    console.log('----saludos a la bandita de ch30----');
+    const result = await gretting(name);
+    console.log( result );
+    console.log('fin del saludo');
+};
+// gretting = async () =>{}
+grettingCh30('Anneth');
+grettingCh30('Leonardo');
+
+const greattingAll = async() =>{
+    try{
+        await grettingCh30('Anneth');
+        await grettingCh30('Leonardo');
+        await grettingCh30('Mau');
+    }
+    catch(error){
+        console.warn('se rechazo la promesa')
+        console.table(error);
+    }
+
+}
+greattingAll();
+
 
 
 

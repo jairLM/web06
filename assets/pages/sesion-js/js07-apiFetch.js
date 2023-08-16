@@ -11,7 +11,7 @@ console.log('JS-07 apiFetch');
 
 const urlFakeStore ='https://fakestoreapi.com/products';
 
-const getProducts = (url) =>{
+/* const getProducts = (url) =>{
 
     fetch( url )
         .then( (resolve)=>{
@@ -25,6 +25,17 @@ const getProducts = (url) =>{
             
         })
         .catch( (error)=> console.log(error));
+} */
+const getProducts = async(url) =>{
+    try{
+        const resolve = await fetch(url);
+        const resolveJson = await resolve.json();
+        printToDom(resolveJson)
+    }
+    catch(error){
+        console.log(error);
+    }
+    
 }
 getProducts( urlFakeStore );
 

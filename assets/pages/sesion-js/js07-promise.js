@@ -42,3 +42,38 @@ pinkyPromise
     .catch( (error)=>console.log(`Promesa rechazada ${error.code}`) )
     .finally( ()=>console.log(`Se ha terminado de resolver la promesa`) )
 console.log('Despues de consumir la promesa');
+
+//Haciendo una promesa con parámetros
+
+/**
+ * Salud especial para las personas que comienzan con A, retardo de 5 seg
+ * saludo especial para personas que empieza su nombre con l
+ * @param {string} name 
+ */
+     const gretting= (name) =>{
+        const myPromise = new Promise( (resolve, reject)=>{
+        const firstChar = name.charAt(0).toLowerCase();
+            if( firstChar === 'a' ) //resolve({code:200, message: `Soy ${name}, ¡Hola a todos!`});
+            setTimeout(() =>resolve({code:200, message: `Soy ${name}, ¡Hola a todos!`}), 5000);
+            else if( firstChar === 'l' ) resolve({code:200, message: `Soy ${name}, Saludos a toda la banda de la ch30 taka taka taka taka taka viene viene viene viene takta taka taka taka`});
+            else reject({code:404, message: `No esto disponible para ${name}`});
+
+        } );//fin de promesa
+        return myPromise
+
+     }
+     gretting('Ana')
+        .then( (response)=> console.log(response.code, response.message)  )
+        .catch( (error)=> console.log(error.code, error.message)  );
+
+     gretting('luisa')
+        .then( (response)=> console.log(response.code, response.message)  )
+        .catch( (error)=> console.log(error.code, error.message)  );
+
+     gretting('eduardo')
+        .then( (response)=> console.log(response.code, response.message)  )
+        .catch( (error)=> console.log(error.code, error.message)  );
+
+
+
+

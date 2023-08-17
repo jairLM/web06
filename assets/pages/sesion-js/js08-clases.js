@@ -66,3 +66,36 @@ function onclickLifeSpan(){
     
 
 }
+
+//============================================
+
+function showProducts(){
+    const products = createProductoOfClassProducts();
+    const productsCards = createCardsOfProducts(products);
+    insertCards(productsCards);
+
+}
+
+function createCardsOfProducts(products){
+
+    return products.map( (product)=>
+        `
+        <div class="card col-4 m-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">${product.name}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">${product.id}</h6>
+                <p class="card-text">Some content about the products.</p>
+                <a href="#" class="card-link">Card link</a>
+            </div>
+        </div>       
+        `
+
+    );
+
+}
+
+function insertCards(productsCards){
+    const products = document.getElementById('productos');
+    const cards = `<div class="row">${productsCards.join('')}</div>` 
+    products.innerHTML = cards;
+};

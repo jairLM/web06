@@ -14,7 +14,7 @@
             <!-- justify-content-center: justificacion vertical -->
             <!-- align-item-center: centrar horizontalmente -->
             <div class="row justify-content-center align-items-center" style="height: 100vh;">
-                <div class="col-8">
+                <div class="col-6">
                     <h1>Sesion JS-08</h1>
                     <h3 class="text-warning">Programación Orientada a Objetos</h3>
                     <ul>
@@ -23,6 +23,26 @@
                         <li>Instanciar una clase</li>                                 
                         <li>Usar el formato JSON</li>
                     </ul>
+                </div>
+                <div class="col-6">
+                  <!-- formulario bootstrap -->
+                  <form id="registerForm" class="row g-3">
+                    <div class="col-md-6">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password">
+                    </div>
+                    <div class="col-12">
+                      <label for="fullname" class="form-label">Fullname</label>
+                      <input type="text" class="form-control" id="fullname" placeholder="Don ramon">
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
+                  </form>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
         <div class="container" >
             <!-- justify-content-center: justificacion vertical -->
             <!-- align-item-center: centrar horizontalmente -->
-            <div class="row justify-content-center align-items-center" style="height: 100vh;">
+            <div class="row justify-content-center align-items-center">
                 <div class="col-6">
                     <h1>Sesion JS-08</h1>
                     <h3 class="text-warning">Programación Orientada a Objetos</h3>
@@ -44,6 +44,19 @@
                     </div>
                   </form>
                 </div>
+            </div>
+            <!-- productos -->
+            <div class="row justify-content-center align-items-center my-5">
+              <div class="col-10">
+                <div id="buttons" class="text-center">
+                  <button onclick="getProducts()" class="btn btn-info">Productos</button>
+                  <button onclick="onclickLifeSpan()" class="btn btn-info">Tiempo de vida</button>
+
+                </div>
+                <div id="productos">
+
+                </div>
+              </div>
             </div>
         </div>
     </main>

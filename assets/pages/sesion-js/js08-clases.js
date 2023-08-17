@@ -5,6 +5,7 @@ const getProducts = async() =>{
     const responseJson = await fetch(url);
     const response = await responseJson.json();
     console.log(response);
+    return response
 }
 /**
  * clase productos
@@ -69,12 +70,24 @@ function onclickLifeSpan(){
 
 //============================================
 
-function showProducts(){
-    const products = createProductoOfClassProducts();
+async function showProducts(){
+    //const products = createProductoOfClassProducts();
+    const products = await createProductsOfFakeStore();
     const productsCards = createCardsOfProducts(products);
     insertCards(productsCards);
 
 }
+
+
+async function createProductsOfFakeStore(){
+    const fakeProducts = await getProducts();
+
+    //return fakeProducts.map(fakeProduct => new Products(fakeProduct.id, fakeProduct.title));
+    return fakeProducts.map(({id, title}) => new Products(id , title));
+
+}
+
+
 
 function createCardsOfProducts(products){
 

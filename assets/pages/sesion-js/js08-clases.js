@@ -1,9 +1,9 @@
-import { Products } from "./js08-product-class.js";
+import { Products, TapiocaProducts } from "./js08-product-class.js";
 
 console.log('sesion JS08-clases');
 
-const getProducts = async() =>{
-    const url = 'https://fakestoreapi.com/products';
+const getProducts = async(url =  "https://fakestoreapi.com/products") =>{
+    //const url = 'https://fakestoreapi.com/products';
     const responseJson = await fetch(url);
     const response = await responseJson.json();
     console.log(response);
@@ -61,7 +61,8 @@ refShowProducts.addEventListener('click', ()=>{
 
 async function showProducts(){
     //const products = createProductoOfClassProducts();
-    const products = await createProductsOfFakeStore();
+    //const products = await createProductsOfFakeStore();
+    const products = await createProductsOfTapioca();
     const productsCards = createCardsOfProducts(products);
     insertCards(productsCards);
 
@@ -71,9 +72,14 @@ async function showProducts(){
 async function createProductsOfFakeStore(){
     const fakeProducts = await getProducts();
 
-    //return fakeProducts.map(fakeProduct => new Products(fakeProduct.id, fakeProduct.title));
+    
     return fakeProducts.map(({id, title}) => new Products(id , title));
 
+}
+async function createProductsOfTapioca(){
+    const fakeProducts = await getProducts("/assets/JSON/tapioca.json");    
+    return fakeProducts.map( ({serie, nombre, image, ingredients }) => 
+                    new TapiocaProducts( serie , nombre , image, ingredients) );
 }
 
 
@@ -81,16 +87,26 @@ async function createProductsOfFakeStore(){
 function createCardsOfProducts(products){
 
     return products.map( (product)=>
-        `
-        <div class="card col-4 m-2" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">${product.name}</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary">${product.id}</h6>
-                <p class="card-text">Some content about the products.</p>
-                <a href="#" class="card-link">Card link</a>
-            </div>
-        </div>       
-        `
+    `
+    <div class="card col-4 m-3" style="width: 18rem;">
+    <img src="${product.image}" class="card-img-top my-2" alt="tapioca">
+    <div class="card-body">
+      <h5 class="card-title">${ product.name}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">${ product.id}</h6>
+      <p class="card-text">Some title content pon uwu xd :V</p>
+      ${
+         product instanceof TapiocaProducts ? 
+          `<ol>
+           ${product.ingredients.map( ingredient => `<li> ${ingredient}</li>` ).join("")}  
+           </ol>
+           <h4> atributo: ${product.atributoEncapsulado } </h4>
+           `
+           : ` <p>ingredientes no disponibles</p>`
+      }
+      <a href="#" class="card-link">Card link</a>
+    </div>
+  </div>       
+    `
 
     );
 

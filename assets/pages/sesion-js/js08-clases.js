@@ -1,3 +1,5 @@
+import { Products } from "./js08-product-class.js";
+
 console.log('sesion JS08-clases');
 
 const getProducts = async() =>{
@@ -7,26 +9,7 @@ const getProducts = async() =>{
     console.log(response);
     return response
 }
-/**
- * clase productos
- * El nombre de las clases se realizan con UpperCamelCase
- */
-class Products {
-    //definimos atributos
 
-    //el método constructor nos yuda a instanciar un objeto
-    constructor(id, name){
-        this.name = name; //creando el atributo name y le asignamos el valor de parámetro name
-        this.id = id;
-        this.createAt = new Date().getTime();
-        //console.log(`Producto ${this.name} se creó el ${new Date().toLocaleString()}`);
-    }
-
-    lifeSpan(){
-        return new Date().getTime() - this.createAt;
-    }
-    
-}
 
 function createProductoOfClassProducts(){
                 //Instanciar la clase Products para crear un objeto
@@ -63,12 +46,18 @@ function onclickLifeSpan(){
     setTimeout(() => {
         const productsListItem = createListItemsOfProducts(products);    
         insertListItem(productsListItem);
-    }, 5000);
-    
+    }, 5000);   
 
 }
 
+
+
 //============================================
+
+const refShowProducts = document.getElementById('showProducts');
+refShowProducts.addEventListener('click', ()=>{
+    showProducts();
+});
 
 async function showProducts(){
     //const products = createProductoOfClassProducts();
